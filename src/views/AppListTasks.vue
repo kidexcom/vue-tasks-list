@@ -1,0 +1,39 @@
+<template>
+  <h1 v-if="isNull" class="text-white center">Задач пока нет</h1>
+  <template v-else>
+  <h3 class="text-white">Всего активных задач: 0</h3>
+  <div class="card">
+    <h2 class="card-title">
+      Название задачи
+      <AppStatus :type="'done'"/>
+    </h2>
+    <p>
+      <strong>
+        <small>
+          {{ new Date().toLocaleDateString() }}
+        </small>
+      </strong>
+    </p>
+
+    <router-link to="/view-task">
+      <button class="btn primary">Посмотреть</button>
+    </router-link>
+  </div>
+</template>
+</template>
+
+<script>
+import AppStatus from '../components/AppStatus'
+
+export default {
+  data() {
+    return {
+      isNull: false
+    }
+  },
+  methods:{
+
+  },
+  components: {AppStatus}
+}
+</script>

@@ -1,14 +1,16 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-  </nav>
-  <home-view></home-view>
-  <router-view/>
+  <TheNavbar/>
+  <div class="container with-nav">
+    <router-view></router-view>
+  </div>
 </template>
-<script>
-import HomeView from "@/views/HomeView";
-export default {
-  components: {HomeView}
-}
 
+<script>
+import TheNavbar from './components/TheNavbar';
+
+export default {
+  components: {
+    TheNavbar,
+  },
+};
 </script>
